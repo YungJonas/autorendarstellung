@@ -51,7 +51,8 @@ img { display: block; max-width: 100%; }
    ================================================================ */
 
 .site-header {
-  background: var(--color-primary);
+  background-color: #e2001a;                 /* hard fallback */
+  background-color: var(--color-primary);    /* token override */
   position: sticky;
   top: 0;
   z-index: 100;
