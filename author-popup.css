@@ -113,7 +113,7 @@ img { display: block; max-width: 100%; }
 
 .standfirst {
   font-family: var(--font-sans);
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.55;
   color: var(--color-text);
   margin-bottom: 20px;
@@ -129,7 +129,7 @@ img { display: block; max-width: 100%; }
   gap: 8px 16px;
   padding: 14px 0;
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-secondary);
   margin-bottom: 24px;
 }
@@ -155,7 +155,7 @@ img { display: block; max-width: 100%; }
 .author-trigger {
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text);
   text-decoration: underline;
   text-decoration-style: solid;
@@ -213,7 +213,7 @@ img { display: block; max-width: 100%; }
   margin: 0 auto;
   padding: 16px 24px 48px;
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.65;
 }
 
@@ -528,4 +528,17 @@ img { display: block; max-width: 100%; }
 
 .author-card__nav-btn:hover:not(.author-card__nav-btn--active) {
   border-color: #666;
+}
+
+
+/* ================================================================
+   Mobile layout adjustments
+   ================================================================ */
+
+@media (max-width: 720px) {
+  .article-header { padding-left: 16px; padding-right: 16px; }
+  .article-body   { padding-left: 16px; padding-right: 16px; }
+  .hero-image__caption { padding-left: 16px; padding-right: 16px; }
+  .byline         { font-size: 14px; }
+  .author-trigger { font-size: 14px; }
 }
