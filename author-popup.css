@@ -94,11 +94,9 @@ img { display: block; max-width: 100%; }
 .kicker {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-primary);
+  color: var(--color-text);
   margin-bottom: 12px;
 }
 
@@ -539,6 +537,7 @@ img { display: block; max-width: 100%; }
   .article-header { padding-left: 16px; padding-right: 16px; }
   .article-body   { padding-left: 16px; padding-right: 16px; font-size: 18px; }
   .hero-image__caption { padding-left: 16px; padding-right: 16px; }
+  .headline       { font-size: 32px; }
   .standfirst     { font-size: 18px; }
   .byline         { font-size: 14px; }
   .author-trigger { font-size: 14px; }
