@@ -1,0 +1,533 @@
+/* ================================================================
+   author-popup.css
+   SPIEGEL Author Popup Prototype
+   ================================================================ */
+
+/* ── Design tokens (mapped from brand token files) ── */
+:root {
+  --color-primary:        var(--bg-pri-base, #e2001a);
+  --color-text:           var(--text-default, #1a1a1a);
+  --color-text-secondary: var(--text-lighter, #666666);
+  --color-border:         var(--border-lighter, #d8d8d8);
+  --color-bg:             var(--bg-full, #ffffff);
+  --color-bg-page:        var(--bg-lightest, #f4f4f4);
+  --color-link:           var(--text-default, #1a1a1a);
+  /* --font-sans and --font-brand come from the active brand token file */
+  --shadow-popup:         0 4px 16px rgba(0, 0, 0, 0.14), 0 1px 4px rgba(0, 0, 0, 0.08);
+  --radius:               var(--radius-default, 4px);
+  --popup-width:          360px;
+  --transition-popup:     0.13s ease;
+}
+
+
+/* ================================================================
+   Page reset & base
+   ================================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg-page);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+img { display: block; max-width: 100%; }
+
+
+/* ================================================================
+   Site nav
+   ================================================================ */
+
+.site-nav {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-nav__inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.site-nav__logo { text-decoration: none; line-height: 1; }
+
+
+/* ================================================================
+   Article layout
+   ================================================================ */
+
+.article {
+  max-width: 1040px;
+  margin: 0 auto;
+  background: var(--color-bg);
+}
+
+
+/* ── Article header ── */
+
+.article-header {
+  padding: 32px 24px 0;
+}
+
+.article-header__inner {
+  max-width: 720px;  /* ~8/12 of 960px content col */
+  margin: 0 auto;
+}
+
+.kicker {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.headline {
+  font-family: var(--font-brand);
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 700;
+  line-height: 1.22;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.standfirst {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--color-text);
+  margin-bottom: 20px;
+}
+
+
+/* ── Byline ── */
+
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 14px 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+}
+
+.byline__von {
+  color: var(--color-text-secondary);
+}
+
+.byline__and {
+  color: var(--color-text-secondary);
+}
+
+.byline__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text-secondary);
+}
+
+.byline__dot { font-size: 10px; }
+
+/* The author trigger link */
+.author-trigger {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--color-text);
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 0.1s;
+}
+
+.author-trigger:hover,
+.author-trigger:focus-visible {
+  color: var(--color-primary);
+  outline: none;
+}
+
+.author-trigger:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+
+/* ── Hero image ── */
+
+.hero-image {
+  margin-bottom: 8px;
+}
+
+.hero-image__img {
+  width: 100%;
+  height: auto;
+}
+
+.hero-image__caption {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  padding: 8px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.hero-image__credit {
+  color: var(--color-text-secondary);
+}
+
+.hero-image__credit::before { content: '· '; }
+
+
+/* ── Article body ── */
+
+.article-body {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px 24px 48px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.article-body p { margin-bottom: 20px; }
+
+.article-body a {
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+}
+
+.article-body a:hover { border-bottom-color: var(--color-text); }
+
+
+/* ── Dev note ── */
+
+.dev-note {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  background: #fffbe6;
+  border-top: 2px solid #f0c040;
+  color: #6b5000;
+  padding: 10px 24px;
+  text-align: center;
+}
+
+
+/* ================================================================
+   Author Card — unified hover + persistent popover
+   ================================================================ */
+
+#author-card {
+  display: none; /* closed – dialog UA default */
+  position: fixed;
+  z-index: 9999;
+  width: var(--popup-width);
+  max-height: 400px;
+  flex-direction: column;
+
+  background: var(--color-bg);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-popup);
+  padding: 0; /* reset dialog UA padding */
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(6px);
+  transition:
+    opacity var(--transition-popup),
+    transform var(--transition-popup);
+}
+
+#author-card[open] {
+  display: flex; /* override UA dialog { display: none } */
+}
+
+#author-card.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (max-width: 720px) {
+  #author-card { width: calc(100vw - 32px); }
+}
+
+/* Arrow — only when anchored to trigger (desktop hover) */
+#author-card.popup--above::after,
+#author-card.popup--below::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--color-bg);
+  transform: rotate(45deg);
+}
+
+#author-card.popup--above::after {
+  bottom: -6px;
+  left: 20px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+#author-card.popup--below::after {
+  top: -6px;
+  left: 18px;
+}
+
+
+/* ── Header ── */
+
+.author-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  flex-shrink: 0;
+}
+
+.author-card__photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+.author-card__summary {
+  flex: 1;
+  min-width: 0;
+}
+
+.author-card__name {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.author-card__role {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
+/* Close button — hidden in hover mode, shown when persistent */
+.author-card__close {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 0.1s, background 0.1s;
+  flex-shrink: 0;
+}
+
+#author-card.is-persistent .author-card__close { display: flex; }
+
+
+.author-card__close:hover        { color: var(--color-primary); background: #eee; }
+.author-card__close:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+
+/* Action buttons row */
+.author-card__actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 7px;
+  flex-wrap: wrap;
+}
+
+.author-card__follow,
+.author-card__profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-action, 3px);
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+}
+
+.author-card__follow {
+  background: var(--color-primary);
+  color: #fff;
+  border: 1.5px solid var(--color-primary);
+}
+
+.author-card__follow:hover { background: var(--bg-pri-dark, #c0001a); border-color: var(--bg-pri-dark, #c0001a); }
+
+.author-card__profile-link {
+  background: transparent;
+  color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+}
+
+.author-card__profile-link:hover { border-color: var(--color-text); }
+
+.author-card__follow:focus-visible,
+.author-card__profile-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+
+/* ── Scrollable body ── */
+
+.author-card__body {
+  overflow-y: auto;
+  flex: 1 1 auto;   /* auto basis so iOS Safari sizes to content; min-height:0 lets it shrink for scroll */
+  min-height: 0;
+}
+
+.author-card__body::-webkit-scrollbar       { width: 4px; }
+.author-card__body::-webkit-scrollbar-track { background: transparent; }
+.author-card__body::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
+
+.author-card__bio {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.55;
+  padding: 12px 16px 16px;
+}
+
+
+/* ================================================================
+   Backdrop (modal only — native ::backdrop from showModal())
+   ================================================================ */
+
+#author-card::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+#author-card.is-visible::backdrop {
+  opacity: 1;
+}
+
+
+/* ================================================================
+   Centered modal mode (mobile)
+   ================================================================ */
+
+#author-card.author-card--modal {
+  top: 50%;
+  left: 50%;
+  width: calc(100vw - 32px);
+  max-width: 400px;
+  max-height: 85vh;
+  border-radius: 8px;
+  /* Scale-in animation replaces the tooltip's fade+nudge */
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.96);
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+#author-card.author-card--modal.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Hide tooltip arrow in modal mode */
+#author-card.author-card--modal::after {
+  display: none;
+}
+
+
+/* ================================================================
+   Author navigation bar (modal only)
+   ================================================================ */
+
+.author-card__nav {
+  display: none;
+  padding: 0 0px 16px 16px;
+  flex-shrink: 0;
+}
+
+#author-card.author-card--modal .author-card__nav {
+  display: block;
+}
+
+.author-card__nav-slider {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: x mandatory;
+}
+
+.author-card__nav-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.author-card__nav-btn {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+  background: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--color-text);
+  cursor: pointer;
+  white-space: nowrap;
+  scroll-snap-align: start;
+}
+
+.author-card__nav-btn--active {
+  border-color: var(--color-text);
+  font-weight: 600;
+}
+
+.author-card__nav-btn:hover:not(.author-card__nav-btn--active) {
+  border-color: #666;
+}

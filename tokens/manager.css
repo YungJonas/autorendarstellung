@@ -1,0 +1,129 @@
+/**
+ * Design Tokens — manager
+ * Source: Figma "Variables (Foundation)" > Color Primitives + Sites
+ */
+
+:root {
+  /* ─── Font Families ───────────────────────────── */
+  --font-brand:      'National 2 Narrow', sans-serif;
+  --font-sans:       'National 2', sans-serif;
+  --font-serif:      'Freight Text Pro', serif;
+  --font-hybrid:     'National 2', sans-serif;
+  --font-hl-opinion: 'Freight Text Pro', serif;
+  --font-aboshop:    'National 2', sans-serif;
+
+  /* ─── Font Weight ─────────────────────────────── */
+  --font-weight-default: 400;
+  --font-weight-bold:    700;
+  --font-weight-brand:   800;
+  --font-weight-opinion: 700; /* Bold Italic — apply font-style: italic separately */
+
+  /* ─── Font Size ───────────────────────────────── */
+  --font-size-2xs: 10px;
+  --font-size-xs:  12px;
+  --font-size-s:   14px;
+  --font-size-m:   16.8px;
+  --font-size-l:   18px;
+  --font-size-xl:  20.6px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 32px;
+  --font-size-5xl: 36px;
+  --font-size-6xl: 40px;
+  --font-size-7xl: 44px;
+  --font-size-8xl: 48px;
+
+  /* ─── Spacing ─────────────────────────────────── */
+  --spacing-xxs: 8px;
+  --spacing-xs:  12px;
+  --spacing-s:   16px;
+  --spacing-m:   24px;
+  --spacing-l:   32px;
+  --spacing-button-x-xs: /* TODO */;
+  --spacing-button-x-sm: /* TODO */;
+  --spacing-button-x-lg: /* TODO */;
+
+  /* ─── Border Radius ───────────────────────────── */
+  --radius-default: 0px;
+  --radius-md:      0px;
+  --radius-action:  0px;
+
+  /* ─── Background ──────────────────────────────── */
+  --bg-base:       #999795;
+  --bg-full:       #FFFFFF;
+  --bg-white:      #FFFFFF;
+  --bg-black:      #000000;
+  --bg-light:      #C4C2C0;
+  --bg-lighter:    #DAD8D5;
+  --bg-lightest:   #F0EFEE;
+  --bg-dark:       #6D6C6B;
+  --bg-darker:     #414140;
+  --bg-darkest:    #161615;
+  --bg-pri-base:   #1B43A4;
+  --bg-pri-dark:   #163683;
+  --bg-pri-darker: #0E2252;
+  --bg-sec-dark:   #8B9087;
+
+  /* ─── Text ───────────────────────────────────── */
+  --text-default:  #161615;
+  --text-darker:   #000000;
+  --text-lighter:  #6D6C6B;
+  --text-white:    #FFFFFF;
+  --text-pri-base: #1B43A4;
+
+  /* ─── Border ─────────────────────────────────── */
+  --border-base:                       #999795;
+  --border-black:                      #000000;
+  --border-white:                      #FFFFFF;
+  --border-light:                      #C4C2C0;
+  --border-lighter:                    #DAD8D5;
+  --border-dark:                       #6D6C6B;
+  --border-darker:                     #414140;
+  --border-link-enabled:               #8B9087;
+  --border-link-hover:                 #454843;
+  --border-button-sec-accent-enabled:  #1B43A4;
+
+  /* ─── Static Colors ──────────────────────────── */
+  --colors-static-white:     #FFFFFF;
+  --colors-static-black:     #000000;
+  --colors-static-light:     #C4C2C0;
+  --colors-static-lighter:   #DAD8D5;
+  --colors-static-lightest:  #F0EFEE;
+  --colors-static-dark:      #6D6C6B;
+  --colors-static-positive:  #3CC83C;
+  --colors-static-negative:  #FF8661;
+  --colors-static-attention: #1B43A4;
+
+  /* ─── Brand / Accent ─────────────────────────── */
+  --colors-hbm-base:  /* TODO */;
+  --colors-hbm-dark:  /* TODO */;
+  --colors-quiz-pill: /* TODO */;
+  --graphic-base:     #1B43A4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base:       #202020;
+    --bg-full:       #202020;
+    --bg-light:      #161615;
+    --bg-lighter:    #414140;
+    --bg-lightest:   #6D6C6B;
+    --bg-dark:       #000000;
+    --bg-darker:     #000000;
+    --bg-darkest:    #000000;
+    --bg-pri-base:   #346BF1;
+    --bg-pri-dark:   #1B43A4;
+    --bg-pri-darker: #0E2252;
+
+    --text-default:  #F0EFEE;
+    --text-darker:   #FFFFFF;
+    --text-lighter:  #C4C2C0;
+    --text-pri-base: #346BF1;
+
+    --border-base:    #414140;
+    --border-light:   #6D6C6B;
+    --border-lighter: #999795;
+    --border-dark:    #161615;
+    --border-darker:  #202020;
+  }
+}

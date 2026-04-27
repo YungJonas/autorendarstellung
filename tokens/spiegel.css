@@ -1,0 +1,132 @@
+/**
+ * Design Tokens — SPIEGEL
+ * Source: Figma "Variables (Foundation)" > Color Primitives + Sites
+ */
+
+:root {
+  /* ─── Font Families ───────────────────────────── */
+  --font-brand:      'SpiegelSlab4UICd', serif;
+  --font-sans:       'SpiegelSans4 UI', sans-serif;
+  --font-serif:      'SpiegelSerif Text UI', serif;
+  --font-hybrid:     'SpiegelSans4 UI', sans-serif;
+  --font-hl-opinion: 'SpiegelSerif Display UI', serif;
+  --font-aboshop:    'SpiegelSans4 UI', sans-serif;
+
+  /* ─── Font Weight ─────────────────────────────── */
+  --font-weight-default: 400;
+  --font-weight-bold:    700;
+  --font-weight-brand:   800;
+  --font-weight-opinion: 700; /* Bold Italic — apply font-style: italic separately */
+
+  /* ─── Font Size ───────────────────────────────── */
+  --font-size-2xs: 10px;
+  --font-size-xs:  12px;
+  --font-size-s:   14px;
+  --font-size-m:   16px;
+  --font-size-l:   18px;
+  --font-size-xl:  20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 32px;
+  --font-size-5xl: 36px;
+  --font-size-6xl: 40px;
+  --font-size-7xl: 44px;
+  --font-size-8xl: 48px;
+
+  /* ─── Spacing ─────────────────────────────────── */
+  --spacing-xxs: 8px;
+  --spacing-xs:  12px;
+  --spacing-s:   16px;
+  --spacing-m:   24px;
+  --spacing-l:   32px;
+  --spacing-button-x-xs: /* TODO */;
+  --spacing-button-x-sm: /* TODO */;
+  --spacing-button-x-lg: /* TODO */;
+
+  /* ─── Border Radius ───────────────────────────── */
+  --radius-default: 1.5px;
+  --radius-md:      8px;
+  --radius-action:  1.5px;
+
+  /* ─── Background ──────────────────────────────── */
+  --bg-base:       #989694;
+  --bg-full:       #FFFFFF;
+  --bg-white:      #FFFFFF;
+  --bg-black:      #000000;
+  --bg-light:      #BBB9B7;
+  --bg-lighter:    #DDDBD9;
+  --bg-lightest:   #F1EFED;
+  --bg-dark:       #807E7C;
+  --bg-darker:     #5C5A58;
+  --bg-darkest:    #2F2D2B;
+  --bg-pri-base:   #E64415;
+  --bg-pri-dark:   #C12B00;
+  --bg-pri-darker: #811D00;
+  --bg-sec-dark:   #235973;
+
+  /* ─── Text ───────────────────────────────────── */
+  --text-default:  #2F2D2B;
+  --text-darker:   #000000;
+  --text-lighter:  #807E7C;
+  --text-white:    #FFFFFF;
+  --text-pri-base: #E64415;
+
+  /* ─── Border ─────────────────────────────────── */
+  --border-base:                       #989694;
+  --border-black:                      #000000;
+  --border-white:                      #FFFFFF;
+  --border-light:                      #BBB9B7;
+  --border-lighter:                    #DDDBD9;
+  --border-dark:                       #807E7C;
+  --border-darker:                     #5C5A58;
+  --border-link-enabled:               #235973;
+  --border-link-hover:                 #1A3A4A;
+  --border-button-sec-accent-enabled:  #E64415;
+
+  /* ─── Static Colors ──────────────────────────── */
+  --colors-static-white:     #FFFFFF;
+  --colors-static-black:     #000000;
+  --colors-static-light:     #BBB9B7;
+  --colors-static-lighter:   #DDDBD9;
+  --colors-static-lightest:  #F1EFED;
+  --colors-static-dark:      #807E7C;
+  --colors-static-positive:  #3CC83C;
+  --colors-static-negative:  #FF8661;
+  --colors-static-attention: #E64415;
+
+  /* ─── Brand / Accent ─────────────────────────── */
+  --colors-hbm-base:   /* TODO: share HBM group screenshot */;
+  --colors-hbm-dark:   /* TODO: share HBM group screenshot */;
+  --colors-quiz-pill:  /* TODO: share Quiz group screenshot */;
+  --graphic-base:      #E64415;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* ─── Background ──────────────────────────────── */
+    --bg-base:       #1F1E1C;
+    --bg-full:       #1F1E1C;
+    --bg-light:      #2F2D2B;
+    --bg-lighter:    #5C5A58;
+    --bg-lightest:   #807E7C;
+    --bg-dark:       #000000;
+    --bg-darker:     #000000;
+    --bg-darkest:    #000000;
+    --bg-pri-base:   #D03D12;
+    --bg-pri-dark:   #811D00;
+    --bg-pri-darker: #811D00;
+
+    /* ─── Text ───────────────────────────────────── */
+    --text-default:  #F1EFED;
+    --text-darker:   #FFFFFF;
+    --text-lighter:  #BBB9B7;
+    --text-pri-base: #FF8661;
+
+    /* ─── Border ─────────────────────────────────── */
+    --border-base:    #5C5A58;
+    --border-light:   #807E7C;
+    --border-lighter: #989694;
+    --border-dark:    #2F2D2B;
+    --border-darker:  #1F1E1C;
+  }
+}

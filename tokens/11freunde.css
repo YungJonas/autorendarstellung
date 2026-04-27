@@ -1,0 +1,131 @@
+/**
+ * Design Tokens — 11 Freunde
+ * Source: Figma "Variables (Foundation)" > Color Primitives + Sites
+ *
+ * TODO: share 11Freunde Primary and Darkmode screenshots to complete dark mode + accent colors
+ */
+
+:root {
+  /* ─── Font Families ───────────────────────────── */
+  --font-brand:      '11F Galano', sans-serif;
+  --font-sans:       '11F Galano', sans-serif;
+  --font-serif:      'Freight Text Pro', serif;
+  --font-hybrid:     'Freight Text Pro', serif;
+  --font-hl-opinion: 'Freight Text Pro', serif;
+  --font-aboshop:    '11F Galano', sans-serif;
+
+  /* ─── Font Weight ─────────────────────────────── */
+  --font-weight-default: 400;
+  --font-weight-bold:    700;
+  --font-weight-brand:   800;
+  --font-weight-opinion: 700; /* Bold Italic — apply font-style: italic separately */
+
+  /* ─── Font Size ───────────────────────────────── */
+  --font-size-2xs: 10px;
+  --font-size-xs:  12px;
+  --font-size-s:   14px;
+  --font-size-m:   16.8px;
+  --font-size-l:   18px;
+  --font-size-xl:  20.6px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 32px;
+  --font-size-5xl: 36px;
+  --font-size-6xl: 40px;
+  --font-size-7xl: 44px;
+  --font-size-8xl: 48px;
+
+  /* ─── Spacing ─────────────────────────────────── */
+  --spacing-xxs: 8px;
+  --spacing-xs:  16px;
+  --spacing-s:   24px;
+  --spacing-m:   32px;
+  --spacing-l:   40px;
+  --spacing-button-x-xs: /* TODO */;
+  --spacing-button-x-sm: /* TODO */;
+  --spacing-button-x-lg: /* TODO */;
+
+  /* ─── Border Radius ───────────────────────────── */
+  --radius-default: 1.5px;
+  --radius-md:      160px;
+  --radius-action:  160px;
+
+  /* ─── Background ──────────────────────────────── */
+  --bg-base:       #8A8A8A;
+  --bg-full:       #FFFFFF;
+  --bg-white:      #FFFFFF;
+  --bg-black:      #000000;
+  --bg-light:      #A3A3A3;
+  --bg-lighter:    #BDBDBD;
+  --bg-lightest:   #E9E5E2;
+  --bg-dark:       #707070;
+  --bg-darker:     #575757;
+  --bg-darkest:    #3D3D3D;
+  --bg-pri-base:   #3C8771;
+  --bg-pri-dark:   #2F6A59;
+  --bg-pri-darker: #234E41;
+  --bg-sec-dark:   #393734;
+
+  /* ─── Text ───────────────────────────────────── */
+  --text-default:  #3D3D3D;
+  --text-darker:   #000000;
+  --text-lighter:  #707070;
+  --text-white:    #FFFFFF;
+  --text-pri-base: #3C8771;
+
+  /* ─── Border ─────────────────────────────────── */
+  --border-base:                       #8A8A8A;
+  --border-black:                      #000000;
+  --border-white:                      #FFFFFF;
+  --border-light:                      #A3A3A3;
+  --border-lighter:                    #BDBDBD;
+  --border-dark:                       #707070;
+  --border-darker:                     #575757;
+  --border-link-enabled:               #393734;
+  --border-link-hover:                 #000000;
+  --border-button-sec-accent-enabled:  #3C8771;
+
+  /* ─── Static Colors ──────────────────────────── */
+  --colors-static-white:     #FFFFFF;
+  --colors-static-black:     #000000;
+  --colors-static-light:     #A3A3A3;
+  --colors-static-lighter:   #BDBDBD;
+  --colors-static-lightest:  #E9E5E2;
+  --colors-static-dark:      #707070;
+  --colors-static-positive:  #3CC83C;
+  --colors-static-negative:  #FF8661;
+  --colors-static-attention: #3C8771;
+
+  /* ─── Brand / Accent ─────────────────────────── */
+  --colors-hbm-base:  /* TODO */;
+  --colors-hbm-dark:  /* TODO */;
+  --colors-quiz-pill: /* TODO */;
+  --graphic-base:     #3C8771;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-base:       #1F1E1C;
+    --bg-full:       #1F1E1C;
+    --bg-light:      #3D3D3D;
+    --bg-lighter:    #575757;
+    --bg-lightest:   #707070;
+    --bg-dark:       #000000;
+    --bg-darker:     #000000;
+    --bg-darkest:    #000000;
+    --bg-pri-base:   #449869;
+    --bg-pri-dark:   #3C8771;
+    --bg-pri-darker: #2F6A59;
+
+    --text-default:  #E9E5E2;
+    --text-darker:   #FFFFFF;
+    --text-lighter:  #A3A3A3;
+    --text-pri-base: #449869;
+
+    --border-base:    #575757;
+    --border-light:   #707070;
+    --border-lighter: #8A8A8A;
+    --border-dark:    #3D3D3D;
+    --border-darker:  #1F1E1C;
+  }
+}
