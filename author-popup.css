@@ -537,8 +537,9 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 720px) {
   .article-header { padding-left: 16px; padding-right: 16px; }
-  .article-body   { padding-left: 16px; padding-right: 16px; }
+  .article-body   { padding-left: 16px; padding-right: 16px; font-size: 18px; }
   .hero-image__caption { padding-left: 16px; padding-right: 16px; }
+  .standfirst     { font-size: 18px; }
   .byline         { font-size: 14px; }
   .author-trigger { font-size: 14px; }
 }
