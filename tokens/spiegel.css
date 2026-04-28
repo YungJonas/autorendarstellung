@@ -3,6 +3,32 @@
  * Source: Figma "Variables (Foundation)" > Color Primitives + Sites
  */
 
+/* ─── Web Fonts ───────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'SpiegelSlab4UICd';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.spiegel.de/public/shared/fonts/SpiegelSlab4UICd-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SpiegelSans4 UI';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.spiegel.de/public/shared/fonts/SpiegelSans4UI-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'SpiegelSans4 UI';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.spiegel.de/public/shared/fonts/SpiegelSans4UI-Bold.woff2') format('woff2');
+}
+
 :root {
   /* ─── Font Families ───────────────────────────── */
   --font-brand:      'SpiegelSlab4UICd', serif;

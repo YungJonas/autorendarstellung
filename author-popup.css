@@ -344,9 +344,7 @@ img { display: block; max-width: 100%; }
   position: fixed;
   z-index: 9999;
   width: var(--popup-width);
-  max-height: 320px;
   flex-direction: column;
-
   background: var(--color-bg);
   border: 1px solid var(--border-lighter);
   border-radius: var(--radius);
@@ -405,7 +403,7 @@ img { display: block; max-width: 100%; }
 }
 
 @media (prefers-color-scheme: dark) {
-  :root { --color-bg-page: #000000; }
+  :root { --color-bg-page: #000000; --bg-lightest: #000000};
 
   #author-card,
   #author-card.popup--above::after,
@@ -486,8 +484,8 @@ img { display: block; max-width: 100%; }
 #author-card.is-persistent .author-card__close { display: flex; }
 
 
-.author-card__close:hover        { color: var(--color-primary); background: #eee; }
-.author-card__close:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+.author-card__close:hover        { color: var(--text-default); background: var(--bg-lightest); }
+.author-card__close:focus-visible { outline: 1px solid var(--text-default); outline-offset: 1px; }
 
 /* Action buttons row */
 .author-card__actions {
@@ -606,10 +604,14 @@ img { display: block; max-width: 100%; }
   display: none;
 }
 
+#author-card.author-card--modal .author-card__body {
+  overflow-y: hidden;
+}
+
 /* Close button — top-right corner in modal mode */
 #author-card.author-card--modal .author-card__close {
   position: absolute;
-  top: 16px;
+  top: 24px;
   right: 16px;
 }
 
@@ -620,7 +622,7 @@ img { display: block; max-width: 100%; }
 
 .author-card__nav {
   display: none;
-  padding: 0 0px 24px 16px;
+  padding: 0 0px 16px 16px;
   flex-shrink: 0;
 }
 
@@ -656,8 +658,8 @@ img { display: block; max-width: 100%; }
 }
 
 .author-card__nav-btn--active {
-  border-color: var(--color-text);
-  font-weight: 600;
+  border-color: var(--text-default);
+  background-color: var(--bg-lightest);
 }
 
 .author-card__nav-btn:hover:not(.author-card__nav-btn--active) {
