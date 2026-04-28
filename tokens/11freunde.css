@@ -5,6 +5,32 @@
  * TODO: share 11Freunde Primary and Darkmode screenshots to complete dark mode + accent colors
  */
 
+/* ─── Web Fonts ───────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: '11F Galano';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.11freunde.de/public/shared/fonts/ElfFGalano-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: '11F Galano';
+  font-weight: 700 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.11freunde.de/public/shared/fonts/ElfFGalano-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Freight Text Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.manager-magazin.de/public/shared/fonts/freigtexprobook-webfont.woff2') format('woff2');
+}
+
 :root {
   /* ─── Font Families ───────────────────────────── */
   --font-brand:      '11F Galano', sans-serif;
