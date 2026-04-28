@@ -50,7 +50,7 @@ window.AuthorCardWidget = function AuthorCardWidget(options) {
       <div class="author-card__header">
         <img class="author-card__photo" src="" alt="" width="64" height="64">
         <div class="author-card__summary">
-          <strong class="author-card__name"></strong>
+          <a class="author-card__name-link" href="#" target="_blank" rel="noopener"></a>
           <span class="author-card__role"></span>
           <div class="author-card__actions">
             <a class="author-card__follow" href="#" target="_blank" rel="noopener">
@@ -96,8 +96,10 @@ window.AuthorCardWidget = function AuthorCardWidget(options) {
   }
 
   function updateNav(index) {
+    const nav    = card.querySelector('.author-card__nav');
     const slider = card.querySelector('.author-card__nav-slider');
     if (!slider) return;
+    if (nav) nav.style.display = triggerList.length <= 1 ? 'none' : '';
     if (slider.children.length !== triggerList.length) {
       slider.innerHTML = '';
       triggerList.forEach(function (trigger, i) {
@@ -342,6 +344,8 @@ window.AuthorCardWidget = function AuthorCardWidget(options) {
       if (cardTrigger === trigger && cardIsVisible()) {
         onPopulate(trigger, card);
       }
-    }
+    },
+    /** Re-collects all .author-trigger elements — call after byline DOM changes. */
+    refresh: collectTriggers
   };
 };

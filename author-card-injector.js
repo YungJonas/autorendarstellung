@@ -67,6 +67,7 @@
   font-family: 'Source Sans 3', -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
 #author-card.is-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+#author-card:focus { outline: none; }
 
 /* Arrow */
 #author-card.popup--above::after,
@@ -92,10 +93,12 @@
   object-fit: cover; flex-shrink: 0; background: #eee;
 }
 .author-card__summary { flex: 1; min-width: 0; }
-.author-card__name {
+.author-card__name-link {
   display: block; font-size: 14px; font-weight: 700;
-  color: var(--ac-text); line-height: 1.3;
+  color: var(--ac-text); line-height: 1.3; text-decoration: none;
 }
+.author-card__name-link:hover { color: var(--ac-primary); }
+.author-card__name-link:focus-visible { outline: 2px solid var(--ac-primary); outline-offset: 2px; border-radius: 2px; }
 .author-card__actions { display: flex; gap: 6px; margin-top: 7px; flex-wrap: wrap; }
 .author-card__follow, .author-card__profile-link {
   display: inline-flex; align-items: center; gap: 4px;
@@ -106,6 +109,7 @@
 .author-card__follow { background: var(--ac-primary); color: #fff; border: 1.5px solid var(--ac-primary); }
 .author-card__follow:hover { background: #c0001a; border-color: #c0001a; }
 .author-card__profile-link { background: transparent; color: var(--ac-text); border: 1.5px solid var(--ac-border); }
+.author-card__profile-link::after { content: '›'; font-size: 1.1em; line-height: 1; }
 .author-card__profile-link:hover { border-color: var(--ac-text); }
 .author-card__follow:focus-visible, .author-card__profile-link:focus-visible { outline: 2px solid var(--ac-primary); outline-offset: 2px; }
 .author-card__role {
@@ -280,7 +284,9 @@
     photo.alt           = trigger.dataset.authorName || '';
     photo.style.display = src ? '' : 'none';
 
-    card.querySelector('.author-card__name').textContent = trigger.dataset.authorName || trigger.textContent.trim();
+    const nameLink = card.querySelector('.author-card__name-link');
+    nameLink.textContent = trigger.dataset.authorName || trigger.textContent.trim();
+    nameLink.href = trigger.href || '#';
     card.querySelector('.author-card__role').textContent = trigger.dataset.authorRole || '';
     card.querySelector('.author-card__profile-link').href = trigger.href || '#';
 
@@ -334,7 +340,7 @@
         <div class="author-card__header">
           <img class="author-card__photo" src="" alt="" width="64" height="64">
           <div class="author-card__summary">
-            <strong class="author-card__name"></strong>
+            <a class="author-card__name-link" href="#" target="_blank" rel="noopener"></a>
             <span class="author-card__role"></span>
             <div class="author-card__actions">
               <a class="author-card__follow" href="#" target="_blank" rel="noopener">
@@ -375,8 +381,10 @@
     }
 
     function updateNav(index) {
+      const nav    = card.querySelector('.author-card__nav');
       const slider = card.querySelector('.author-card__nav-slider');
       if (!slider) return;
+      if (nav) nav.style.display = triggerList.length <= 1 ? 'none' : '';
       if (slider.children.length !== triggerList.length) {
         slider.innerHTML = '';
         triggerList.forEach(function (trigger, i) {
@@ -483,7 +491,7 @@
 
         requestAnimationFrame(function () {
           card.classList.add('is-visible', 'is-persistent');
-          card.querySelector('.author-card__profile-link').focus();
+          card.querySelector('.author-card__name-link').focus();
         });
       } else {
         card.classList.remove('popup--above', 'popup--below', 'is-visible');
@@ -493,7 +501,7 @@
         requestAnimationFrame(function () {
           positionEl(card, cardTrigger);
           card.classList.add('is-visible', 'is-persistent');
-          card.querySelector('.author-card__profile-link').focus();
+          card.querySelector('.author-card__name-link').focus();
         });
       }
 

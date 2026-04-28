@@ -32,7 +32,7 @@ body {
   font-family: var(--font-sans);
   color: var(--color-text);
   background: var(--color-bg-page);
-  line-height: 1.6;
+  line-height: 1.38;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -122,31 +122,44 @@ img { display: block; max-width: 100%; }
 
 .byline {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px 16px;
+  flex-direction: column;
   font-family: var(--font-sans);
   font-size: 16px;
   color: var(--color-text-secondary);
   margin-bottom: 24px;
+  gap: 2px;
 }
 
-.byline__von {
-  color: var(--color-text-secondary);
-}
-
+.byline__von,
 .byline__and {
   color: var(--color-text-secondary);
 }
 
+.byline__and {
+  margin-left: 2px;
+}
+
 .byline__meta {
-  display: flex;
-  align-items: center;
-  gap: 6px;
   color: var(--color-text-secondary);
 }
 
-.byline__dot { font-size: 10px; }
+/* ── Byline with author photos (≤2 authors) ── */
+.byline__author-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.byline__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eee;
+  flex-shrink: 0;
+}
 
 /* The author trigger link */
 .author-trigger {
@@ -188,19 +201,11 @@ img { display: block; max-width: 100%; }
 
 .hero-image__caption {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-secondary);
-  padding: 8px 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+  padding: 8px 16px;
+  line-height: 1.26;
 }
-
-.hero-image__credit {
-  color: var(--color-text-secondary);
-}
-
-.hero-image__credit::before { content: '· '; }
 
 
 /* ── Article body ── */
@@ -238,6 +243,98 @@ img { display: block; max-width: 100%; }
 }
 
 
+/* ── Dev controls panel ── */
+
+.dev-controls {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--bg-full, #fff);
+  border: 1px solid var(--border-lighter, #ddd);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .12);
+  z-index: 10000;
+  min-width: 180px;
+}
+
+.dev-controls__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.dev-controls__label {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-lighter, #666);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  white-space: nowrap;
+}
+
+.dev-controls__select {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-default, #1a1a1a);
+  background: var(--bg-full, #fff);
+  border: 1px solid var(--border-lighter, #ddd);
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.dev-controls__stepper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dev-controls__step {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1;
+  font-family: var(--font-sans, sans-serif);
+  background: var(--bg-full, #fff);
+  border: 1px solid var(--border-lighter, #ddd);
+  border-radius: 8px;
+  color: var(--text-default, #1a1a1a);
+  cursor: pointer;
+  transition: background .1s, border-color .1s;
+  padding: 0;
+}
+
+.dev-controls__step:hover:not(:disabled) {
+  background: var(--bg-lightest, #f4f4f4);
+  border-color: var(--text-lighter, #999);
+}
+
+.dev-controls__step:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.dev-controls__count {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-default, #1a1a1a);
+  min-width: 18px;
+  text-align: center;
+}
+
+
 /* ================================================================
    Author Card — unified hover + persistent popover
    ================================================================ */
@@ -267,6 +364,8 @@ img { display: block; max-width: 100%; }
 #author-card[open] {
   display: flex; /* override UA dialog { display: none } */
 }
+
+#author-card:focus { outline: none; }
 
 #author-card.is-visible {
   opacity: 1;
@@ -322,13 +421,13 @@ img { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 16px 16px;
+  padding: 24px 16px 8px 16px;
   flex-shrink: 0;
 }
 
 .author-card__photo {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
@@ -340,13 +439,22 @@ img { display: block; max-width: 100%; }
   min-width: 0;
 }
 
-.author-card__name {
+.author-card__name-link {
   display: block;
   font-family: var(--font-sans);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--color-text);
-  line-height: 1.3;
+  line-height: 1.26;
+  text-decoration: none;
+}
+
+.author-card__name-link:hover { color: var(--color-primary); }
+
+.author-card__name-link:focus-visible {
+  outline: 0cap solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
 }
 
 .author-card__role {
@@ -354,8 +462,8 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-sans);
   font-size: 14px;
   color: var(--color-text-secondary);
-  line-height: 1.4;
-  margin-top: 1px;
+  line-height: 1.26;
+  margin-top: 4px;
 }
 
 /* Close button — hidden in hover mode, shown when persistent */
@@ -363,8 +471,8 @@ img { display: block; max-width: 100%; }
   display: none;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   background: none;
   border: none;
@@ -394,11 +502,12 @@ img { display: block; max-width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  padding: 4px 10px;
+  padding: 6px 12px;
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
+  line-height: normal;
   border-radius: var(--radius-action, 3px);
   transition: background 0.1s, color 0.1s, border-color 0.1s;
 }
@@ -415,6 +524,12 @@ img { display: block; max-width: 100%; }
   background: transparent;
   color: var(--color-text);
   border: 1.5px solid var(--color-border);
+}
+
+.author-card__profile-link::after {
+  content: '›';
+  font-size: 1.1em;
+  line-height: 1;
 }
 
 .author-card__profile-link:hover { border-color: var(--color-text); }
@@ -443,7 +558,7 @@ img { display: block; max-width: 100%; }
   font-size: 16px;
   color: var(--color-text);
   line-height: 1.38;
-  padding: 12px 16px 16px;
+  padding: 8px 16px 24px 16px;
 }
 
 
@@ -505,7 +620,7 @@ img { display: block; max-width: 100%; }
 
 .author-card__nav {
   display: none;
-  padding: 0 0px 16px 16px;
+  padding: 0 0px 24px 16px;
   flex-shrink: 0;
 }
 
@@ -528,9 +643,9 @@ img { display: block; max-width: 100%; }
 
 .author-card__nav-btn {
   flex-shrink: 0;
-  padding: 6px 14px;
+  padding: 6px 12px;
   border: 1.5px solid var(--color-border);
-  border-radius: 999px;
+  border-radius: 9999px;
   background: none;
   font-size: 14px;
   font-family: inherit;
@@ -555,7 +670,7 @@ img { display: block; max-width: 100%; }
    ================================================================ */
 
 @media (max-width: 720px) {
-  .article-header { padding-left: 16px; padding-right: 16px; }
+  .article-header { padding-left: 16px; padding-right: 16px;}
   .article-body   { padding-left: 16px; padding-right: 16px; font-size: 18px; }
   .hero-image__caption { padding-left: 16px; padding-right: 16px; }
   .headline       { font-size: 32px; }

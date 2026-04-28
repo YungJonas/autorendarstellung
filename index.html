@@ -7,41 +7,6 @@
 
   <link id="theme-tokens" rel="stylesheet" href="tokens/spiegel.css">
   <link rel="stylesheet" href="author-popup.css">
-  <style>
-    .brand-switcher {
-      position: fixed;
-      bottom: 16px;
-      right: 16px;
-      display: flex;
-      gap: 4px;
-      background: var(--bg-full, #fff);
-      border: 1px solid var(--border-lighter, #ddd);
-      border-radius: var(--radius-md, 8px);
-      padding: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.12);
-      z-index: 10000;
-    }
-    .brand-switcher__btn {
-      padding: 5px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      font-family: inherit;
-      border: none;
-      border-radius: var(--radius-action, 4px);
-      background: transparent;
-      color: var(--text-lighter, #666);
-      cursor: pointer;
-      transition: background .1s, color .1s;
-    }
-    .brand-switcher__btn.is-active {
-      background: var(--bg-pri-base, #e2001a);
-      color: #fff;
-    }
-    .brand-switcher__btn:hover:not(.is-active) {
-      background: var(--bg-lightest, #f4f4f4);
-      color: var(--text-default, #1a1a1a);
-    }
-  </style>
 </head>
 <body>
 
@@ -74,65 +39,10 @@
 
           <!-- Byline -->
           <div class="byline">
-            <div class="byline__authors">
-              <span class="byline__von">Von</span>
-              <a
-                href="https://www.spiegel.de/impressum/autor/markus-becker/"
-                class="author-trigger"
-                data-author-name="Markus Becker"
-                data-author-role="Redakteur Politik &amp; Bundeswehr"
-                data-author-bio="Markus Becker berichtet seit 2005 für den SPIEGEL aus Berlin. Seine Schwerpunkte sind Sicherheitspolitik, Bundeswehr und die Nato. Er hat mehrere Bücher zur deutschen Verteidigungspolitik veröffentlicht."
-                data-author-photo="https://i.pravatar.cc/96?img=12"
-                data-author-follow="https://www.spiegel.de/newsletter/"
-              >Markus Becker</a>,
-              <a
-                href="https://www.spiegel.de/impressum/autor/anna-reimann/"
-                class="author-trigger"
-                data-author-name="Anna Reimann"
-                data-author-role="Reporterin Innenpolitik"
-                data-author-bio="Anna Reimann arbeitet seit 2011 als Redakteurin beim SPIEGEL und berichtet über deutsche Innenpolitik, gesellschaftliche Debatten und Sicherheitsfragen."
-                data-author-photo="https://i.pravatar.cc/96?img=44"
-                data-author-follow="https://www.spiegel.de/newsletter/"
-              >Anna Reimann</a>,
-              <a
-                href="https://www.spiegel.de/impressum/autor/peter-hoffmann/"
-                class="author-trigger"
-                data-author-name="Peter Hoffmann"
-                data-author-role="Korrespondent Europa"
-                data-author-bio="Peter Hoffmann berichtet als Europakorrespondent aus Brüssel. Er beobachtet die Entwicklungen in der EU, der Nato und den transatlantischen Beziehungen seit über einem Jahrzehnt."
-                data-author-photo="https://i.pravatar.cc/96?img=33"
-              >Peter Hoffmann</a>,
-              <a
-                href="https://www.spiegel.de/impressum/autor/sandra-weiss/"
-                class="author-trigger"
-                data-author-name="Sandra Weiss"
-                data-author-role="Reporterin Nahost &amp; Sicherheit"
-                data-author-bio="Sandra Weiss ist Nahost-Expertin beim SPIEGEL und hat mehrere Jahre aus Israel, dem Libanon und der Türkei berichtet. Ihr Fokus liegt auf Konfliktdynamiken und regionaler Sicherheitspolitik."
-                data-author-photo="https://i.pravatar.cc/96?img=60"
-              >Sandra Weiss</a>,
-              <a
-                href="https://www.spiegel.de/impressum/autor/thomas-klein/"
-                class="author-trigger"
-                data-author-name="Thomas Klein"
-                data-author-role="Redakteur Verteidigung"
-                data-author-bio="Thomas Klein ist seit 2008 beim SPIEGEL und spezialisiert sich auf Rüstungspolitik, Beschaffungsskandale und die strukturellen Herausforderungen der Bundeswehr."
-                data-author-photo="https://i.pravatar.cc/96?img=20"
-              >Thomas Klein</a>
-              <span class="byline__and"> und </span>
-              <a
-                href="https://www.spiegel.de/impressum/autor/lena-schulz/"
-                class="author-trigger"
-                data-author-name="Lena Schulz"
-                data-author-role="Redakteurin Gesellschaft"
-                data-author-bio="Lena Schulz schreibt über gesellschaftliche Debatten, Gleichstellung und den Wandel in deutschen Institutionen. Sie ist seit 2015 beim SPIEGEL und lebt in Hamburg."
-                data-author-photo="https://i.pravatar.cc/96?img=5"
-              >Lena Schulz</a>
-            </div>
+            <div class="byline__authors"><!-- populated by renderByline() --></div>
 
             <div class="byline__meta">
-              <time id="article-date" datetime="2026-03-03">03.03.2026</time>
-              <span class="byline__dot" aria-hidden="true">·</span>
-              <span id="article-readtime">5 Min. Lesezeit</span>
+              <time id="article-date" datetime="2026-03-03T17:31">03.03.2026, 17.31 Uhr</time>
             </div>
           </div>
 
@@ -149,10 +59,7 @@
             width="960" height="640"
             class="hero-image__img"
           >
-          <figcaption class="hero-image__caption">
-            <span id="article-caption">Rekruten bei der Schießausbildung: Noch immer bricht einer von vier Soldaten den Dienst vorzeitig ab</span>
-            <span id="article-credit" class="hero-image__credit">Foto: Federico Gambarini / dpa</span>
-          </figcaption>
+          <figcaption class="hero-image__caption" id="article-caption">Rekruten bei der Schießausbildung: Noch immer bricht einer von vier Soldaten den Dienst vorzeitig ab · Foto: Federico Gambarini / dpa</figcaption>
         </figure>
       </div>
 
@@ -181,10 +88,23 @@
     <strong>Prototype:</strong> Desktop: hover an author name for a quick tooltip · click to open the accordion modal. Mobile: tap to open the modal.
   </aside>
 
-  <div class="brand-switcher" role="group" aria-label="Brand wechseln">
-    <button class="brand-switcher__btn is-active" data-brand="spiegel">SPIEGEL</button>
-    <button class="brand-switcher__btn" data-brand="manager">manager</button>
-    <button class="brand-switcher__btn" data-brand="11freunde">11Freunde</button>
+  <div class="dev-controls" aria-label="Prototype-Steuerung">
+    <div class="dev-controls__row">
+      <label class="dev-controls__label" for="brand-select">Brand</label>
+      <select class="dev-controls__select" id="brand-select">
+        <option value="spiegel">SPIEGEL</option>
+        <option value="manager">manager</option>
+        <option value="11freunde">11Freunde</option>
+      </select>
+    </div>
+    <div class="dev-controls__row">
+      <label class="dev-controls__label">Autoren</label>
+      <div class="dev-controls__stepper">
+        <button class="dev-controls__step" id="btn-remove-author" type="button" aria-label="Autor entfernen">−</button>
+        <span class="dev-controls__count" id="author-count">6</span>
+        <button class="dev-controls__step" id="btn-add-author" type="button" aria-label="Autor hinzufügen">+</button>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -210,7 +130,7 @@
           kicker: 'Bundeswehr',
           headline: 'Bericht des Wehrbeauftragten: »Rekruten drückten den Kopf eines Kameraden in eine Toilettenschüssel«',
           standfirst: 'Henning Otte hat als Wehrbeauftragter seinen ersten Jahresbericht vorgelegt. Er äußert Zweifel, ob die Personalziele der Bundeswehr ohne Rückkehr zur Wehrpflicht erreichbar sind – und schildert erschreckende Fälle von Misshandlungen in der Ausbildung.',
-          date: '03.03.2026', datetime: '2026-03-03', readtime: '5 Min. Lesezeit',
+          date: '03.03.2026, 17.31 Uhr', datetime: '2026-03-03T17:31',
           imgSrc: 'https://cdn.prod.www.spiegel.de/images/cb4f3734-88b3-4a74-9e44-d71d2b045858_w960_r1.5_fpx66.67_fpy50.jpg',
           imgAlt: 'Rekruten bei der Schießausbildung',
           caption: 'Rekruten bei der Schießausbildung: Noch immer bricht einer von vier Soldaten den Dienst vorzeitig ab',
@@ -227,7 +147,7 @@
           kicker: 'Fahrradindustrie',
           headline: 'Canyon-Gründer Roman Arnold holt mit Matthias Meier neuen CEO an Bord',
           standfirst: 'Der Direktversender Canyon Bicycles bekommt erstmals einen externen Chef. Matthias Meier, zuletzt Managing Director bei der Boston Consulting Group, übernimmt die operative Führung. Gründer Roman Arnold zieht sich aus dem Tagesgeschäft zurück – und erklärt, warum der Zeitpunkt ideal sei.',
-          date: '09.04.2026', datetime: '2026-04-09', readtime: '4 Min. Lesezeit',
+          date: '09.04.2026, 09.15 Uhr', datetime: '2026-04-09T09:15',
           imgSrc: 'https://cdn.prod.www.manager-magazin.de/images/c3a24b09-a85e-4efe-9117-c0bf7da817ab_w1840_r1.5_fpx54_fpy46.webp',
           imgAlt: 'Canyon-Gründer Roman Arnold',
           caption: 'Canyon-Gründer Roman Arnold gibt nach über zwei Jahrzehnten das operative Steuer ab',
@@ -244,7 +164,7 @@
           kicker: 'Champions League',
           headline: 'FC Bayern München vs. Real Madrid: Die Bestia Negra ist zurück',
           standfirst: 'Wieder kein Weiterkommen gegen die Königlichen. Beim Viertelfinal-Aus des FC Bayern in der Champions League zeigte sich ein altbekanntes Muster: Gegen Real Madrid verliert der Rekordmeister seinen Rhythmus – und irgendwie auch den Verstand. Eine Analyse.',
-          date: '16.04.2026', datetime: '2026-04-16', readtime: '6 Min. Lesezeit',
+          date: '16.04.2026, 23.42 Uhr', datetime: '2026-04-16T23:42',
           imgSrc: 'https://cdn.prod.www.11freunde.de/images/009c93ee-5515-4ff9-acfe-c62cbdba108e_w1024_r1.5_fpx41_fpy27.webp',
           imgAlt: 'FC Bayern gegen Real Madrid in der Champions League',
           caption: 'Wieder kein Weiterkommen gegen die Königlichen: Bayern scheitert erneut an Real Madrid',
@@ -257,43 +177,120 @@
         }
       };
 
-      const link   = document.getElementById('theme-tokens');
-      const logo   = document.getElementById('nav-logo');
-      const btns   = document.querySelectorAll('.brand-switcher__btn');
-      const saved  = localStorage.getItem('brand') || 'spiegel';
+      /* ── Author pool (12 entries) ── */
+      const AUTHORS = [
+        { name: 'Markus Becker',  role: 'Redakteur Politik & Bundeswehr',    bio: 'Markus Becker berichtet seit 2005 für den SPIEGEL aus Berlin. Seine Schwerpunkte sind Sicherheitspolitik, Bundeswehr und die Nato. Er hat mehrere Bücher zur deutschen Verteidigungspolitik veröffentlicht.',                                  photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/markus-becker/',  follow: 'https://www.spiegel.de/newsletter/' },
+        { name: 'Anna Reimann',   role: 'Reporterin Innenpolitik',            bio: 'Anna Reimann arbeitet seit 2011 als Redakteurin beim SPIEGEL und berichtet über deutsche Innenpolitik, gesellschaftliche Debatten und Sicherheitsfragen.',                                                                                              photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/anna-reimann/',   follow: 'https://www.spiegel.de/newsletter/' },
+        { name: 'Peter Hoffmann', role: 'Korrespondent Europa',               bio: 'Peter Hoffmann berichtet als Europakorrespondent aus Brüssel. Er beobachtet die Entwicklungen in der EU, der Nato und den transatlantischen Beziehungen seit über einem Jahrzehnt.',                                                                     photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',      profile: 'https://www.spiegel.de/impressum/autor/peter-hoffmann/' },
+        { name: 'Sandra Weiss',   role: 'Reporterin Nahost & Sicherheit',     bio: 'Sandra Weiss ist Nahost-Expertin beim SPIEGEL und hat mehrere Jahre aus Israel, dem Libanon und der Türkei berichtet. Ihr Fokus liegt auf Konfliktdynamiken und regionaler Sicherheitspolitik.',                                                         photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/sandra-weiss/' },
+        { name: 'Thomas Klein',   role: 'Redakteur Verteidigung',             bio: 'Thomas Klein ist seit 2008 beim SPIEGEL und spezialisiert sich auf Rüstungspolitik, Beschaffungsskandale und die strukturellen Herausforderungen der Bundeswehr.',                                                                                       photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/thomas-klein/' },
+        { name: 'Carla Fischer',  role: 'Kulturredakteurin',                  bio: 'Carla Fischer schreibt über Film, Literatur und die Kulturpolitik im deutschsprachigen Raum. Sie ist seit 2013 beim SPIEGEL und moderiert den Kulturpodcast des Hauses.',                                                                                  photo: 'https://ui-avatars.com/api/?name=Carla+Fischer&background=2F2D2B&color=F1EFED&size=256&bold=true&font-size=0.38', profile: 'https://www.spiegel.de/impressum/autor/carla-fischer/' },
+        { name: 'Michael Hesse',  role: 'Wirtschaftsredakteur',               bio: 'Michael Hesse analysiert seit 2009 Konjunktur, Kapitalmärkte und Unternehmensstrategien für den SPIEGEL. Zuvor arbeitete er als Analyst bei einer Frankfurter Investmentbank.',                                                                          photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/michael-hesse/',  follow: 'https://www.spiegel.de/newsletter/' },
+        { name: 'Julia Bergmann', role: 'Wissenschaftsredakteurin',           bio: 'Julia Bergmann ist promovierte Biologin und berichtet für den SPIEGEL über Klimaforschung, Medizin und Technologie. Sie wurde 2021 mit dem Wissenschaftsjournalismuspreis ausgezeichnet.',                                                               photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/julia-bergmann/', follow: 'https://www.spiegel.de/newsletter/' },
+        { name: 'Klaus Dieter',   role: 'Korrespondent Washington',           bio: 'Klaus Dieter berichtet seit 2018 aus Washington über US-amerikanische Innen- und Außenpolitik. Er hat die Präsidentschaften von Trump und Biden hautnah begleitet.',                                                                                     photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/klaus-dieter/' },
+        { name: 'Petra Vogt',     role: 'Reporterin Justiz & Kriminalität',   bio: 'Petra Vogt recherchiert für den SPIEGEL zu Strafrecht, Korruption und organisierter Kriminalität. Ihre Berichte haben mehrfach zu parlamentarischen Untersuchungsausschüssen geführt.',                                                                  photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',      profile: 'https://www.spiegel.de/impressum/autor/petra-vogt/' },
+        { name: 'Stefan Meier',   role: 'Digitalredakteur',                   bio: 'Stefan Meier beobachtet für den SPIEGEL die Entwicklungen in der Tech-Branche, bei KI-Unternehmen und in der Plattformökonomie. Er hat zuvor als Softwareentwickler gearbeitet.',                                                                       photo: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/stefan-meier/',   follow: 'https://www.spiegel.de/newsletter/' },
+        { name: 'Lena Schulz',    role: 'Redakteurin Gesellschaft',           bio: 'Lena Schulz schreibt über gesellschaftliche Debatten, Gleichstellung und den Wandel in deutschen Institutionen. Sie ist seit 2015 beim SPIEGEL und lebt in Hamburg.',                                                                                     photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=256&h=256&fit=crop&crop=faces&auto=format&q=80',   profile: 'https://www.spiegel.de/impressum/autor/lena-schulz/' }
+      ];
+
+      let currentAuthors = AUTHORS.slice(0, 6);
+
+      /* ── Byline rendering ── */
+      function renderByline(authors) {
+        const container = document.querySelector('.byline__authors');
+        const withPhotos = authors.length <= 2;
+        let html = '<span class="byline__von">Von</span> ';
+        authors.forEach(function (author, i) {
+          const isLast = i === authors.length - 1;
+          if (i > 0) {
+            html += isLast ? '<span class="byline__and"> und </span>' : ', ';
+          }
+          const authorLink = '<a'
+            + ' href="' + author.profile + '"'
+            + ' class="author-trigger"'
+            + ' data-author-name="' + author.name + '"'
+            + ' data-author-role="' + author.role + '"'
+            + ' data-author-bio="' + author.bio + '"'
+            + ' data-author-photo="' + author.photo + '"'
+            + (author.follow ? ' data-author-follow="' + author.follow + '"' : '')
+            + '>' + author.name + '</a>';
+          if (withPhotos) {
+            html += '<span class="byline__author-item">'
+              + '<img class="byline__avatar" src="' + (author.photo || '') + '" alt="' + author.name + '" width="40" height="40">'
+              + authorLink
+              + '</span>';
+          } else {
+            html += authorLink;
+          }
+        });
+
+        container.innerHTML = html;
+        if (window.authorWidget) window.authorWidget.refresh();
+      }
+
+      /* ── Dev controls state ── */
+      function updateControls() {
+        document.getElementById('author-count').textContent = currentAuthors.length;
+        document.getElementById('btn-remove-author').disabled = currentAuthors.length <= 1;
+        document.getElementById('btn-add-author').disabled    = currentAuthors.length >= Math.min(AUTHORS.length, 10);
+      }
+
+      function addAuthor() {
+        const available = AUTHORS.filter(function (a) { return !currentAuthors.includes(a); });
+        if (!available.length) return;
+        const pick = available[Math.floor(Math.random() * available.length)];
+        currentAuthors.push(pick);
+        renderByline(currentAuthors);
+        updateControls();
+      }
+
+      function removeAuthor() {
+        if (currentAuthors.length <= 1) return;
+        const idx = Math.floor(Math.random() * currentAuthors.length);
+        currentAuthors.splice(idx, 1);
+        renderByline(currentAuthors);
+        updateControls();
+      }
+
+      /* ── Brand activation ── */
+      const link  = document.getElementById('theme-tokens');
+      const logo  = document.getElementById('nav-logo');
+      const sel   = document.getElementById('brand-select');
+      const saved = localStorage.getItem('brand') || 'spiegel';
 
       function activate(brand) {
         const a = ARTICLES[brand];
         const l = LOGOS[brand];
 
         link.href = 'tokens/' + brand + '.css';
-        btns.forEach(b => b.classList.toggle('is-active', b.dataset.brand === brand));
         localStorage.setItem('brand', brand);
 
-        // Logo
         logo.setAttribute('aria-label', l.label);
         logo.innerHTML = l.svg;
 
-        // Article text
-        document.getElementById('page-title').textContent       = a.title;
-        document.getElementById('article-kicker').textContent   = a.kicker;
-        document.getElementById('article-headline').textContent = a.headline;
+        document.getElementById('page-title').textContent        = a.title;
+        document.getElementById('article-kicker').textContent    = a.kicker;
+        document.getElementById('article-headline').textContent  = a.headline;
         document.getElementById('article-standfirst').textContent = a.standfirst;
-        document.getElementById('article-date').textContent     = a.date;
+        document.getElementById('article-date').textContent      = a.date;
         document.getElementById('article-date').setAttribute('datetime', a.datetime);
-        document.getElementById('article-readtime').textContent = a.readtime;
-        document.getElementById('article-body').innerHTML       = a.body;
+        document.getElementById('article-body').innerHTML        = a.body;
 
-        // Hero image
         const img = document.getElementById('article-img');
         img.src = a.imgSrc;
         img.alt = a.imgAlt;
-        document.getElementById('article-caption').textContent = a.caption;
-        document.getElementById('article-credit').textContent  = a.credit;
+        document.getElementById('article-caption').textContent = a.caption + ' · ' + a.credit;
       }
 
-      btns.forEach(b => b.addEventListener('click', () => activate(b.dataset.brand)));
+      sel.addEventListener('change', function () { activate(sel.value); });
+      document.getElementById('btn-add-author').addEventListener('click', addAuthor);
+      document.getElementById('btn-remove-author').addEventListener('click', removeAuthor);
+
+      sel.value = saved;
       if (saved !== 'spiegel') activate(saved);
+
+      renderByline(currentAuthors);
+      updateControls();
     })();
   </script>
 

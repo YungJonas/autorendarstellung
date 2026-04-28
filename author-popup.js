@@ -17,7 +17,9 @@
     const name = trigger.dataset.authorName || trigger.textContent.trim();
     const profileHref = trigger.href || '#';
 
-    card.querySelector('.author-card__name').textContent = name;
+    const nameLink = card.querySelector('.author-card__name-link');
+    nameLink.textContent = name;
+    nameLink.href = profileHref;
     card.querySelector('.author-card__role').textContent = trigger.dataset.authorRole || '';
     card.querySelector('.author-card__bio').textContent  = trigger.dataset.authorBio  || '';
 
@@ -31,7 +33,7 @@
   }
 
   function init() {
-    AuthorCardWidget({ populateCard });
+    window.authorWidget = AuthorCardWidget({ populateCard });
   }
 
   if (document.readyState === 'loading') {
