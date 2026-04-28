@@ -3,6 +3,32 @@
  * Source: Figma "Variables (Foundation)" > Color Primitives + Sites
  */
 
+/* ─── Web Fonts ───────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: 'National 2 Narrow';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.manager-magazin.de/public/shared/fonts/national-2-narrow-web-bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'National 2';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.manager-magazin.de/public/shared/fonts/national-2-web-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'National 2';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.manager-magazin.de/public/shared/fonts/national-2-web-bold.woff2') format('woff2');
+}
+
 :root {
   /* ─── Font Families ───────────────────────────── */
   --font-brand:      'National 2 Narrow', sans-serif;
