@@ -29,6 +29,14 @@
   src: url('https://cdn.prod.www.manager-magazin.de/public/shared/fonts/national-2-web-bold.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'Freight Text Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://cdn.prod.www.manager-magazin.de/public/shared/fonts/freigtexprobook-webfont.woff2') format('woff2');
+}
+
 :root {
   /* ─── Font Families ───────────────────────────── */
   --font-brand:      'National 2 Narrow', sans-serif;
