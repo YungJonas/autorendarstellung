@@ -233,14 +233,32 @@ img { display: block; max-width: 100%; }
 /* ── Dev note ── */
 
 .dev-note {
+  position: relative;
   font-family: var(--font-sans);
   font-size: 13px;
   background: #fffbe6;
-  border-top: 2px solid #f0c040;
+  border-bottom: 2px solid #f0c040;
   color: #6b5000;
-  padding: 10px 24px;
+  padding: 10px 48px 10px 24px;
   text-align: center;
 }
+
+.dev-note__close {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #6b5000;
+  line-height: 1;
+  padding: 4px;
+  opacity: 0.6;
+}
+
+.dev-note__close:hover { opacity: 1; }
 
 
 /* ── Dev controls panel ── */

@@ -23,6 +23,12 @@
     </div>
   </header>
 
+  <!-- ── Dev hint ── -->
+  <aside class="dev-note" aria-label="Entwicklungshinweis">
+    <strong>Prototype:</strong> Desktop: hover an author name for a quick tooltip · Mobile: tap to open the modal. Use the UI to switch brands, and change number of authors.
+    <button class="dev-note__close" aria-label="Hinweis schließen" onclick="this.closest('.dev-note').remove()">✕</button>
+  </aside>
+
   <!-- ── Article ── -->
   <main>
     <article class="article">
@@ -86,11 +92,6 @@
 
     </article>
   </main>
-
-  <!-- ── Dev hint ── -->
-  <aside class="dev-note" aria-label="Entwicklungshinweis">
-    <strong>Prototype:</strong> Desktop: hover an author name for a quick tooltip · click to open the accordion modal. Mobile: tap to open the modal.
-  </aside>
 
   <div class="dev-controls" aria-label="Prototype-Steuerung">
     <div class="dev-controls__row">
